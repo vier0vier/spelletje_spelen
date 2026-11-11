@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retro Arcade Online</title>
+
+<style>
+body{
+    margin:0;
+    background:#000;
+    color:#fff;
+    font-family:Arial, sans-serif;
+    overflow:hidden;
+}
+
+#startScreen{
+    position:fixed;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:#000814;
+}
+
+h1{
+    color:#00ffcc;
+    margin-bottom:30px;
+    text-shadow:0 0 20px #00ffcc;
+}
+
+button{
+    font-size:2rem;
+    padding:20px 50px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#00cc66;
+    color:white;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#00ee77;
+}
+
+video{
+    display:none;
+    width:100vw;
+    height:100vh;
+    object-fit:cover;
+}
+</style>
+</head>
+
+<body>
+
+<div id="startScreen">
+    <h1>RETRO ARCADE ONLINE</h1>
+    <button onclick="startGame()">START ONLINE GAME</button>
+</div>
+
+<video id="gameVideo" playsinline>
+    <source src="c64_prank_deluxe.mp4" type="video/mp4">
+</video>
+
+<script>
+function startGame() {
+    document.getElementById("startScreen").style.display = "none";
+
+    let video = document.getElementById("gameVideo");
+    video.style.display = "block";
+
+    video.play();
+}
+</script>
+
+</body>
+</html>
